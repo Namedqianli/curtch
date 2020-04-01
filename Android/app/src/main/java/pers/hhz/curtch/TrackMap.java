@@ -4,9 +4,13 @@ import android.Manifest;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -22,8 +26,24 @@ import com.baidu.mapapi.map.BaiduMap;
 import com.baidu.mapapi.map.MapStatus;
 import com.baidu.mapapi.map.MapStatusUpdateFactory;
 import com.baidu.mapapi.map.MapView;
+import com.baidu.mapapi.map.MyLocationConfiguration;
 import com.baidu.mapapi.map.MyLocationData;
+import com.baidu.mapapi.map.Overlay;
+import com.baidu.mapapi.map.OverlayOptions;
+import com.baidu.mapapi.map.PolylineOptions;
 import com.baidu.mapapi.model.LatLng;
+import com.baidu.trace.LBSTraceClient;
+import com.baidu.trace.Trace;
+import com.baidu.trace.model.OnTraceListener;
+import com.baidu.trace.model.PushMessage;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.Socket;
+import java.util.ArrayList;
+import java.util.List;
 
 public class TrackMap extends Fragment {
 
@@ -33,7 +53,134 @@ public class TrackMap extends Fragment {
     private double latitude;            //Latitude获取纬度信息
     private double longitude;           //Longitude获取经度信息
     private boolean isFirstLoc;         //第一次定位
+    private boolean isFirstLocation;
+    private Trace trace;                //轨迹
+    private LBSTraceClient lbsTraceClient;
+    private Thread thread;
+    private Handler handler;
+    private BufferedReader bufferedReader;
+    private LatLng point1;
+    private LatLng point2;
+    /**
+     * 初始化监听器
+     */
+    private OnTraceListener onTraceListener = new OnTraceListener() {
+        @Override
+        public void onBindServiceCallback(int i, String s) {
 
+        }
+
+        /**
+         * 开启服务回调
+         * @param i
+         * @param s
+         */
+        @Override
+        public void onStartTraceCallback(int i, String s) {
+            //开启采集
+            lbsTraceClient.startGather(onTraceListener);
+        }
+
+        @Override
+        public void onStopTraceCallback(int i, String s) {
+
+        }
+
+        @Override
+        public void onStartGatherCallback(int i, String s) {
+
+        }
+
+        @Override
+        public void onStopGatherCallback(int i, String s) {
+
+        }
+
+        @Override
+        public void onPushCallback(byte b, PushMessage pushMessage) {
+
+        }
+
+        @Override
+        public void onInitBOSCallback(int i, String s) {
+
+        }
+    };
+    private void initHandler(){
+        handler = new Handler(){
+            @Override
+            public void handleMessage(@NonNull Message msg) {
+                super.handleMessage(msg);
+                //取出消息
+                String buffer = msg.obj.toString();
+                Log.d("debug001", buffer);
+                String result[] = buffer.split("#");
+                switch (result[0]){
+                    case "0":
+                        if(isFirstLocation){
+                            point2 = new LatLng(Double.valueOf(result[2]), Double.valueOf(result[1]));
+                            MapStatus.Builder builder = new MapStatus.Builder()
+                                    .target(point2) //地图缩放中心点
+                                    .zoom(17f);
+                            isFirstLocation = false;
+                        }else {
+                            point1 = point2;
+                            point2 = new LatLng(Double.valueOf(result[2]), Double.valueOf(result[1]));
+                            List<LatLng> points = new ArrayList<LatLng>();
+                            points.add(point1);
+                            points.add(point2);
+                            //设置折线的属性
+                            OverlayOptions mOverlayOptions = new PolylineOptions()
+                                    .width(10)
+                                    .color(0xAAFF0000)
+                                    .points(points);
+                            //绘制折线
+                            Overlay mPolyline = baiduMap.addOverlay(mOverlayOptions);
+                            mPolyline.setZIndex(3);
+                        }
+                        MyLocationData locData = new MyLocationData.Builder()
+                                .latitude(point2.latitude)
+                                .longitude(point2.longitude).build();
+                        baiduMap.setMyLocationData(locData);
+                        break;
+                    case "1":
+                        break;
+                }
+            }
+        };
+    }
+    /**
+     * 初始化线程
+     */
+    private void initThread() throws IOException {
+        thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (true){
+                    String buffer = new String("");
+                    //Log.d("debug001", "thread is running");
+                    try {
+                        if (bufferedReader.ready()) {
+                            try {
+                                buffer = "";
+                                buffer = bufferedReader.readLine();
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                            if (buffer.length() != 0) {
+                                Message message = handler.obtainMessage();
+                                message.obj = buffer;
+                                handler.sendMessage(message);
+                            }
+                        }
+                    }catch (IOException e){
+                        e.printStackTrace();
+                    }
+                }
+            }
+        });
+        thread.start();
+    }
     /**
      * 定位事件监听
      */
@@ -58,11 +205,12 @@ public class TrackMap extends Fragment {
             if (isFirstLoc) {
                 isFirstLoc = false;
                 MapStatus.Builder builder = new MapStatus.Builder()
-                        .target(latLng)//地图缩放中心点
-                        .zoom(17f);//缩放倍数 百度地图支持缩放21级 部分特殊图层为20级
+                        .target(latLng) //地图缩放中心点
+                        .zoom(17f);     //缩放倍数 百度地图支持缩放21级 部分特殊图层为20级
                 //改变地图状态
                 baiduMap.setMapStatus(MapStatusUpdateFactory.newMapStatus(builder.build()));
             }
+            baiduMap.setMyLocationData(locData);
             locationClient.stop();
             baiduMap.clear();
         }
@@ -122,7 +270,19 @@ public class TrackMap extends Fragment {
     /**
      * 初始化
      */
-    private void init(){
+    private void init() throws IOException {
+        //获取输入流
+        Socket socket = ((MyApplication)getActivity().getApplication()).getSocket();
+        InputStream ips;
+        InputStreamReader ipsr;
+        try {
+            ips = socket.getInputStream();
+            ipsr = new InputStreamReader(ips);
+            bufferedReader = new BufferedReader(ipsr);
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+        //初始化地图定位
         //检查申请权限
         judgePermission();
         //第一次定位
@@ -146,6 +306,31 @@ public class TrackMap extends Fragment {
         locationClient.registerLocationListener(myLocationListener);
         //开始定位
         locationClient.start();
+        //初始化轨迹
+        //初始化轨迹服务
+        long serviceId = 218935;
+        //设备标识
+        String entityName = "HHZTrace";
+        // 是否需要对象存储服务，默认为：false，关闭对象存储服务。注：鹰眼 Android SDK v3.0以上版本支持随轨迹上传图像等对象数据，若需使用此功能，该参数需设为 true，且需导入bos-android-sdk-1.0.2.jar。
+        boolean isNeedObjectStorage = false;
+        // 初始化轨迹服务
+        trace = new Trace(serviceId, entityName, isNeedObjectStorage);
+        // 初始化轨迹服务客户端
+        lbsTraceClient = new LBSTraceClient(getActivity().getApplicationContext());
+        //设置定位和回传周期
+        //定位周期（单位：秒）
+        int gatherInerval = 5;
+        //打包回传周期（单位：秒）
+        int packInterval = 10;
+        //设置定位和打包周期
+        lbsTraceClient.setInterval(gatherInerval, packInterval);
+        //开启服务
+        lbsTraceClient.startTrace(trace, onTraceListener);
+        //开启采集
+        lbsTraceClient.startGather(onTraceListener);
+        initHandler();
+        initThread();
+        isFirstLocation = true;
     }
 
     @Nullable
@@ -158,7 +343,11 @@ public class TrackMap extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        init();
+        try {
+            init();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override

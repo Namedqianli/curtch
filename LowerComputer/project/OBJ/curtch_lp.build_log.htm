@@ -3,33 +3,62 @@
 <pre>
 <h1>礦ision Build Log</h1>
 <h2>Tool Versions:</h2>
-IDE-Version: μVision V5.25.3.0
-Copyright (C) 2018 ARM Ltd and ARM Germany GmbH. All rights reserved.
+IDE-Version: μVision V5.29.0.0
+Copyright (C) 2019 ARM Ltd and ARM Germany GmbH. All rights reserved.
 License Information: Li JunkYu, guet, LIC=CZLX7-E1WA3-UGC7Q-NA518-CULXN-794AH
  
 Tool Versions:
-Toolchain:       MDK-ARM Plus  Version: 5.26.2.0
+Toolchain:       MDK-ARM Plus  Version: 5.29.0.0
 Toolchain Path:  D:\Software\Keil_v5\ARM\ARMCC\Bin
 C Compiler:      Armcc.exe V5.06 update 6 (build 750)
 Assembler:       Armasm.exe V5.06 update 6 (build 750)
 Linker/Locator:  ArmLink.exe V5.06 update 6 (build 750)
 Library Manager: ArmAr.exe V5.06 update 6 (build 750)
 Hex Converter:   FromElf.exe V5.06 update 6 (build 750)
-CPU DLL:         SARMCM3.DLL V5.26.2.0
-Dialog DLL:      DCM.DLL V1.17.2.0
-Target DLL:      UL2CM3.DLL V1.161.6.0
-Dialog DLL:      TCM.DLL V1.36.1.0
+CPU DLL:         SARMCM3.DLL V5.29.0.0
+Dialog DLL:      DCM.DLL V1.17.3.0
+Target DLL:      UL2CM3.DLL V1.163.0.0
+Dialog DLL:      TCM.DLL V1.36.5.0
  
 <h2>Project:</h2>
-D:\Code\crutch_h\curtch\LowerComputer\project\USER\curtch_lp.uvprojx
-Project File Date:  01/11/2020
+D:\Code\Curtch\curtch\LowerComputer\project\USER\curtch_lp.uvprojx
+Project File Date:  04/01/2020
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 6 (build 750)', folder: 'D:\Software\Keil_v5\ARM\ARMCC\Bin'
 Build target 'Curtch'
+compiling main.c...
+main.c(39): warning:  #223-D: function "memset" declared implicitly
+  		memset(sendBuffer, 0, sizeof(sendBuffer));
+main.c(41): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "u8 *"
+  		esp8266_send_data_tcp(sendBuffer,20);
+main.c(53): warning:  #111-D: statement is unreachable
+  	return 0;
+main.c(21): warning:  #177-D: variable "pitch"  was declared but never referenced
+  	float pitch,roll,yaw; 			//欧拉角
+main.c(21): warning:  #177-D: variable "roll"  was declared but never referenced
+  	float pitch,roll,yaw; 			//欧拉角
+main.c(21): warning:  #177-D: variable "yaw"  was declared but never referenced
+  	float pitch,roll,yaw; 			//欧拉角
+main.c(22): warning:  #177-D: variable "aacx"  was declared but never referenced
+  	short aacx,aacy,aacz;			//加速度传感器原始数据
+main.c(22): warning:  #177-D: variable "aacy"  was declared but never referenced
+  	short aacx,aacy,aacz;			//加速度传感器原始数据
+main.c(22): warning:  #177-D: variable "aacz"  was declared but never referenced
+  	short aacx,aacy,aacz;			//加速度传感器原始数据
+main.c(23): warning:  #177-D: variable "gyrox"  was declared but never referenced
+  	short gyrox,gyroy,gyroz;		//陀螺仪原始数据
+main.c(23): warning:  #177-D: variable "gyroy"  was declared but never referenced
+  	short gyrox,gyroy,gyroz;		//陀螺仪原始数据
+main.c(23): warning:  #177-D: variable "gyroz"  was declared but never referenced
+  	short gyrox,gyroy,gyroz;		//陀螺仪原始数据
+main.c(24): warning:  #177-D: variable "temp"  was declared but never referenced
+  	short temp;						//温度	
+main.c: 13 warnings, 0 errors
 linking...
-Program Size: Code=676 RO-data=320 RW-data=0 ZI-data=1632  
-"..\OBJ\curtch_lp.axf" - 0 Error(s), 0 Warning(s).
+Program Size: Code=19328 RO-data=1244 RW-data=380 ZI-data=3036  
+FromELF: creating hex file...
+"..\OBJ\curtch_lp.axf" - 0 Error(s), 13 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -43,7 +72,7 @@ Package Vendor: Keil
   D:\Software\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include
 
 <h2>Collection of Component Files used:</h2>
-Build Time Elapsed:  00:00:00
+Build Time Elapsed:  00:00:02
 </pre>
 </body>
 </html>

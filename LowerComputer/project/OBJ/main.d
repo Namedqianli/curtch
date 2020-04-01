@@ -28,3 +28,15 @@
 ..\obj\main.o: ..\FWLib\inc\stm32f10x_usart.h
 ..\obj\main.o: ..\FWLib\inc\stm32f10x_wwdg.h
 ..\obj\main.o: ..\FWLib\inc\misc.h
+..\obj\main.o: ..\SYSTEM\USART\usart.h
+..\obj\main.o: D:\Software\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\main.o: ..\SYSTEM\SYS\sys.h
+..\obj\main.o: ..\SYSTEM\USART3\usart3.h
+..\obj\main.o: ..\HARDWARE\ESP8266\esp8266.h
+..\obj\main.o: ..\SYSTEM\DELAY\delay.h
+..\obj\main.o: ..\HARDWARE\MPU6050\mpu6050.h
+..\obj\main.o: ..\HARDWARE\MPU6050\mpuiic.h
+..\obj\main.o: ..\USMART\usmart.h
+..\obj\main.o: ..\USMART\usmart_str.h
+..\obj\main.o: ..\HARDWARE\MPU6050\eMPL\inv_mpu.h
+..\obj\main.o: ..\HARDWARE\MPU6050\eMPL\inv_mpu_dmp_motion_driver.h
