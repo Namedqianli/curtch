@@ -1,16 +1,19 @@
 package pers.hhz.curtch;
 
 import android.Manifest;
+import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -26,7 +29,6 @@ import com.baidu.mapapi.map.BaiduMap;
 import com.baidu.mapapi.map.MapStatus;
 import com.baidu.mapapi.map.MapStatusUpdateFactory;
 import com.baidu.mapapi.map.MapView;
-import com.baidu.mapapi.map.MyLocationConfiguration;
 import com.baidu.mapapi.map.MyLocationData;
 import com.baidu.mapapi.map.Overlay;
 import com.baidu.mapapi.map.OverlayOptions;
@@ -61,6 +63,8 @@ public class TrackMap extends Fragment {
     private BufferedReader bufferedReader;
     private LatLng point1;
     private LatLng point2;
+    private boolean threadFlag;
+    private Thread threadCall;
     /**
      * 初始化监听器
      */
@@ -144,10 +148,104 @@ public class TrackMap extends Fragment {
                         baiduMap.setMyLocationData(locData);
                         break;
                     case "1":
+                        if(threadFlag == false){
+                            threadFlag = true;
+                            threadCall = new Thread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    String number = ((MyApplication)getActivity().getApplication()).getSosNumber1();
+                                    if(number != null){
+                                        callPhone(number);
+                                        try {
+                                            Thread.sleep(10000);
+                                            Log.d("sleep","sleep20");
+                                        } catch (InterruptedException e) {
+                                            e.printStackTrace();
+                                        }
+                                    }
+                                    if(phoneIsInUse()){
+                                        threadFlag = false;
+                                        return;
+                                    }
+                                    number = ((MyApplication)getActivity().getApplication()).getSosNumber2();
+                                    if(number != null){
+                                        callPhone(number);
+                                        try {
+                                            Thread.sleep(10000);
+                                        } catch (InterruptedException e) {
+                                            e.printStackTrace();
+                                        }
+                                    }
+                                    if(phoneIsInUse()){
+                                        threadFlag = false;
+                                        return;
+                                    }
+                                    number = ((MyApplication)getActivity().getApplication()).getSosNumber3();
+                                    if(number != null){
+                                        callPhone(number);
+                                        try {
+                                            Thread.sleep(10000);
+                                        } catch (InterruptedException e) {
+                                            e.printStackTrace();
+                                        }
+                                    }
+                                    if(phoneIsInUse()){
+                                        threadFlag = false;
+                                        return;
+                                    }
+                                    number = ((MyApplication)getActivity().getApplication()).getSosNumber4();
+                                    if(number != null){
+                                        callPhone(number);
+                                        try {
+                                            Thread.sleep(10000);
+                                        } catch (InterruptedException e) {
+                                            e.printStackTrace();
+                                        }
+                                    }
+                                    if(phoneIsInUse()){
+                                        threadFlag = false;
+                                        return;
+                                    }
+                                    number = ((MyApplication)getActivity().getApplication()).getSosNumber5();
+                                    if(number != null){
+                                        callPhone(number);
+                                        try {
+                                            Thread.sleep(10000);
+                                        } catch (InterruptedException e) {
+                                            e.printStackTrace();
+                                        }
+                                    }
+                                    if(phoneIsInUse()){
+                                        threadFlag = false;
+                                        return;
+                                    }
+                                    threadFlag = false;
+                                }
+                            });
+                            threadCall.start();
+                        }
                         break;
                 }
             }
         };
+    }
+    /**
+     * 拨打电话（直接拨打电话）
+     * @param phoneNum 电话号码
+     */
+    public void callPhone(String phoneNum){
+        Intent intent = new Intent(Intent.ACTION_CALL);
+        Uri data = Uri.parse("tel:" + phoneNum);
+        intent.setData(data);
+        startActivity(intent);
+    }
+    /**
+     * 是否正在电话通话中
+     */
+    private boolean phoneIsInUse() {
+        TelephonyManager mTelephonyManager = (TelephonyManager) getActivity().getSystemService(Context.TELEPHONY_SERVICE);
+        int state = mTelephonyManager.getCallState();
+        return state != TelephonyManager.CALL_STATE_IDLE;
     }
     /**
      * 初始化线程
@@ -252,7 +350,6 @@ public class TrackMap extends Fragment {
                 ActivityCompat.requestPermissions(getActivity(), ACCESS_COARSE_LOCATION, 400);
             }
 
-
             String[] READ_EXTERNAL_STORAGE = {Manifest.permission.READ_EXTERNAL_STORAGE};
             if (ContextCompat.checkSelfPermission(getContext(), READ_EXTERNAL_STORAGE[0]) != PackageManager.PERMISSION_GRANTED) {
                 // 如果没有授予该权限，就去提示用户请求
@@ -264,6 +361,12 @@ public class TrackMap extends Fragment {
                 // 如果没有授予该权限，就去提示用户请求
                 ActivityCompat.requestPermissions(getActivity(), WRITE_EXTERNAL_STORAGE, 600);
             }
+
+            String[] CALL_PHONE = {Manifest.permission.CALL_PHONE};
+            if (ContextCompat.checkSelfPermission(getContext(), CALL_PHONE[0]) != PackageManager.PERMISSION_GRANTED) {
+                // 如果没有授予该权限，就去提示用户请求
+                ActivityCompat.requestPermissions(getActivity(), CALL_PHONE, 600);
+            }
         }
     }
 
@@ -271,6 +374,7 @@ public class TrackMap extends Fragment {
      * 初始化
      */
     private void init() throws IOException {
+        threadFlag = false;
         //获取输入流
         Socket socket = ((MyApplication)getActivity().getApplication()).getSocket();
         InputStream ips;

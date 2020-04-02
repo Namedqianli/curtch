@@ -22,14 +22,14 @@
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <!-- Android Q之后，后台定位需要申请该权限 -->
     <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
-
-
     <!-- 以下不是鹰眼SDK需要的基础权限，可选 -->
 
     <!-- 用于加快GPS首次定位，可选权限，非必须-->
     <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS"></uses-permission>
     <!-- 用于Android M及以上系统，申请加入忽略电池优化白名单，可选权限，非必须-->
     <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS"></uses-permission>
+    <!--拨打电话-->
+    <uses-permission android:name="android.permission.CALL_PHONE" ></uses-permission>
 
     <application
         android:name=".MyApplication"
@@ -42,7 +42,6 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

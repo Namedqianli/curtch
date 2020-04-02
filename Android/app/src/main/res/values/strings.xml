@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Curtch</string>
+    <string name="shared_preferences_file_name">sp_contact</string>
+    <string name="sos_contact1_number">sos_contact1_number</string>
+    <string name="sos_contact2_number">sos_contact2_number</string>
+    <string name="sos_contact3_number">sos_contact3_number</string>
+    <string name="sos_contact4_number">sos_contact4_number</string>
+    <string name="sos_contact5_number">sos_contact5_number</string>
 </resources>
