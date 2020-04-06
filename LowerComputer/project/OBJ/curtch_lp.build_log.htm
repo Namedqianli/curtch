@@ -28,11 +28,11 @@ Project File Date:  04/01/2020
 *** Using Compiler 'V5.06 update 6 (build 750)', folder: 'D:\Software\Keil_v5\ARM\ARMCC\Bin'
 Build target 'Curtch'
 compiling main.c...
-main.c(39): warning:  #223-D: function "memset" declared implicitly
+main.c(36): warning:  #223-D: function "memset" declared implicitly
   		memset(sendBuffer, 0, sizeof(sendBuffer));
-main.c(41): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "u8 *"
+main.c(38): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "u8 *"
   		esp8266_send_data_tcp(sendBuffer,20);
-main.c(53): warning:  #111-D: statement is unreachable
+main.c(41): warning:  #111-D: statement is unreachable
   	return 0;
 main.c(21): warning:  #177-D: variable "pitch"  was declared but never referenced
   	float pitch,roll,yaw; 			//欧拉角
@@ -54,11 +54,17 @@ main.c(23): warning:  #177-D: variable "gyroz"  was declared but never reference
   	short gyrox,gyroy,gyroz;		//陀螺仪原始数据
 main.c(24): warning:  #177-D: variable "temp"  was declared but never referenced
   	short temp;						//温度	
-main.c: 13 warnings, 0 errors
+main.c(25): warning:  #177-D: variable "t"  was declared but never referenced
+  	u8 i = 0, t = 1;
+main.c: 14 warnings, 0 errors
+compiling usmart_config.c...
+compiling mpu6050.c...
+compiling mpuiic.c...
+compiling inv_mpu.c...
 linking...
-Program Size: Code=19328 RO-data=1244 RW-data=380 ZI-data=3036  
+Program Size: Code=29784 RO-data=4464 RW-data=436 ZI-data=3052  
 FromELF: creating hex file...
-"..\OBJ\curtch_lp.axf" - 0 Error(s), 13 Warning(s).
+"..\OBJ\curtch_lp.axf" - 0 Error(s), 14 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -72,7 +78,7 @@ Package Vendor: Keil
   D:\Software\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include
 
 <h2>Collection of Component Files used:</h2>
-Build Time Elapsed:  00:00:02
+Build Time Elapsed:  00:00:03
 </pre>
 </body>
 </html>

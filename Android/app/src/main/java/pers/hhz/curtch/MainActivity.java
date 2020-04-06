@@ -180,7 +180,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
         int cityId = 0;
-        ArrayList<MKOLSearchRecord> records = mkOfflineMap.searchCity("玉林市");
+        ArrayList<MKOLSearchRecord> records = mkOfflineMap.searchCity("贵港市");
         if (records != null && records.size() == 1) {
             cityId = records.get(0).cityID;
         }

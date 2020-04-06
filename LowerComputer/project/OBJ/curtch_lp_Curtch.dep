@@ -699,7 +699,7 @@ I (..\FWLib\inc\stm32f10x_spi.h)(0x4D783BB4)
 I (..\FWLib\inc\stm32f10x_tim.h)(0x4D783BB4)
 I (..\FWLib\inc\stm32f10x_usart.h)(0x4D783BB4)
 I (..\FWLib\inc\misc.h)(0x4D783BB4)
-F (.\main.c)(0x5E845B57)(--c99 --gnu -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\FWLib\inc -I ..\CMSIS -I ..\USER -I ..\SYSTEM -I ..\SYSTEM\USART -I ..\HARDWARE\ESP8266 -I ..\SYSTEM\DELAY -I ..\SYSTEM\SYS -I ..\SYSTEM\TIMER -I ..\SYSTEM\USART3 -I ..\HARDWARE\MPU6050 -I ..\HARDWARE\MPU6050\eMPL -I ..\USMART-I.\RTE\_Curtch-ID:\Software\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-ID:\Software\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="529" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o ..\obj\main.o --omf_browse ..\obj\main.crf --depend ..\obj\main.d)
+F (.\main.c)(0x5E886ACE)(--c99 --gnu -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\FWLib\inc -I ..\CMSIS -I ..\USER -I ..\SYSTEM -I ..\SYSTEM\USART -I ..\HARDWARE\ESP8266 -I ..\SYSTEM\DELAY -I ..\SYSTEM\SYS -I ..\SYSTEM\TIMER -I ..\SYSTEM\USART3 -I ..\HARDWARE\MPU6050 -I ..\HARDWARE\MPU6050\eMPL -I ..\USMART-I.\RTE\_Curtch-ID:\Software\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-ID:\Software\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="529" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o ..\obj\main.o --omf_browse ..\obj\main.crf --depend ..\obj\main.d)
 I (..\CMSIS\stm32f10x.h)(0x4D783CB4)
 I (..\CMSIS\core_cm3.h)(0x4D523B58)
 I (D:\Software\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9AD218)
@@ -735,7 +735,7 @@ I (..\SYSTEM\USART3\usart3.h)(0x5540D59E)
 I (..\HARDWARE\ESP8266\esp8266.h)(0x5E824C08)
 I (..\SYSTEM\DELAY\delay.h)(0x5E7F4A8B)
 I (..\HARDWARE\MPU6050\mpu6050.h)(0x5E8455BE)
-I (..\HARDWARE\MPU6050\mpuiic.h)(0x5E832C34)
+I (..\HARDWARE\MPU6050\mpuiic.h)(0x5E899A28)
 I (..\USMART\usmart.h)(0x5501A38D)
 I (..\USMART\usmart_str.h)(0x5501A38D)
 I (..\HARDWARE\MPU6050\eMPL\inv_mpu.h)(0x54B9E068)
@@ -808,7 +808,7 @@ I (..\SYSTEM\USART3\usart3.h)(0x5540D59E)
 I (..\SYSTEM\DELAY\delay.h)(0x5E7F4A8B)
 F (..\HARDWARE\MPU6050\mpu6050.c)(0x5E8456EE)(--c99 --gnu -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\FWLib\inc -I ..\CMSIS -I ..\USER -I ..\SYSTEM -I ..\SYSTEM\USART -I ..\HARDWARE\ESP8266 -I ..\SYSTEM\DELAY -I ..\SYSTEM\SYS -I ..\SYSTEM\TIMER -I ..\SYSTEM\USART3 -I ..\HARDWARE\MPU6050 -I ..\HARDWARE\MPU6050\eMPL -I ..\USMART-I.\RTE\_Curtch-ID:\Software\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-ID:\Software\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="529" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o ..\obj\mpu6050.o --omf_browse ..\obj\mpu6050.crf --depend ..\obj\mpu6050.d)
 I (..\HARDWARE\MPU6050\mpu6050.h)(0x5E8455BE)
-I (..\HARDWARE\MPU6050\mpuiic.h)(0x5E832C34)
+I (..\HARDWARE\MPU6050\mpuiic.h)(0x5E899A28)
 I (..\SYSTEM\SYS\sys.h)(0x5E7F4A05)
 I (..\CMSIS\stm32f10x.h)(0x4D783CB4)
 I (..\CMSIS\core_cm3.h)(0x4D523B58)
@@ -877,7 +877,7 @@ I (..\FWLib\inc\stm32f10x_wwdg.h)(0x4D783BB4)
 I (..\FWLib\inc\misc.h)(0x4D783BB4)
 I (..\HARDWARE\MPU6050\eMPL\inv_mpu_dmp_motion_driver.h)(0x50CA9A0C)
 I (..\HARDWARE\MPU6050\mpu6050.h)(0x5E8455BE)
-I (..\HARDWARE\MPU6050\mpuiic.h)(0x5E832C34)
+I (..\HARDWARE\MPU6050\mpuiic.h)(0x5E899A28)
 I (..\SYSTEM\SYS\sys.h)(0x5E7F4A05)
 I (..\SYSTEM\DELAY\delay.h)(0x5E7F4A8B)
 I (..\SYSTEM\USART\usart.h)(0x50517A82)
@@ -921,8 +921,8 @@ I (..\HARDWARE\MPU6050\eMPL\dmpmap.h)(0x50CA9A0C)
 I (..\SYSTEM\USART\usart.h)(0x50517A82)
 I (..\SYSTEM\SYS\sys.h)(0x5E7F4A05)
 I (..\SYSTEM\DELAY\delay.h)(0x5E7F4A8B)
-F (..\HARDWARE\MPU6050\mpuiic.c)(0x5E8459E8)(--c99 --gnu -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\FWLib\inc -I ..\CMSIS -I ..\USER -I ..\SYSTEM -I ..\SYSTEM\USART -I ..\HARDWARE\ESP8266 -I ..\SYSTEM\DELAY -I ..\SYSTEM\SYS -I ..\SYSTEM\TIMER -I ..\SYSTEM\USART3 -I ..\HARDWARE\MPU6050 -I ..\HARDWARE\MPU6050\eMPL -I ..\USMART-I.\RTE\_Curtch-ID:\Software\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-ID:\Software\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="529" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o ..\obj\mpuiic.o --omf_browse ..\obj\mpuiic.crf --depend ..\obj\mpuiic.d)
-I (..\HARDWARE\MPU6050\mpuiic.h)(0x5E832C34)
+F (..\HARDWARE\MPU6050\mpuiic.c)(0x5E886ACE)(--c99 --gnu -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\FWLib\inc -I ..\CMSIS -I ..\USER -I ..\SYSTEM -I ..\SYSTEM\USART -I ..\HARDWARE\ESP8266 -I ..\SYSTEM\DELAY -I ..\SYSTEM\SYS -I ..\SYSTEM\TIMER -I ..\SYSTEM\USART3 -I ..\HARDWARE\MPU6050 -I ..\HARDWARE\MPU6050\eMPL -I ..\USMART-I.\RTE\_Curtch-ID:\Software\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-ID:\Software\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="529" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o ..\obj\mpuiic.o --omf_browse ..\obj\mpuiic.crf --depend ..\obj\mpuiic.d)
+I (..\HARDWARE\MPU6050\mpuiic.h)(0x5E899A28)
 I (..\SYSTEM\SYS\sys.h)(0x5E7F4A05)
 I (..\CMSIS\stm32f10x.h)(0x4D783CB4)
 I (..\CMSIS\core_cm3.h)(0x4D523B58)
@@ -1181,7 +1181,7 @@ I (..\FWLib\inc\misc.h)(0x4D783BB4)
 I (..\SYSTEM\DELAY\delay.h)(0x5E7F4A8B)
 I (..\SYSTEM\SYS\sys.h)(0x5E7F4A05)
 I (..\HARDWARE\MPU6050\mpu6050.h)(0x5E8455BE)
-I (..\HARDWARE\MPU6050\mpuiic.h)(0x5E832C34)
+I (..\HARDWARE\MPU6050\mpuiic.h)(0x5E899A28)
 F (..\USMART\usmart_str.c)(0x5501A38D)(--c99 --gnu -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\FWLib\inc -I ..\CMSIS -I ..\USER -I ..\SYSTEM -I ..\SYSTEM\USART -I ..\HARDWARE\ESP8266 -I ..\SYSTEM\DELAY -I ..\SYSTEM\SYS -I ..\SYSTEM\TIMER -I ..\SYSTEM\USART3 -I ..\HARDWARE\MPU6050 -I ..\HARDWARE\MPU6050\eMPL -I ..\USMART-I.\RTE\_Curtch-ID:\Software\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-ID:\Software\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="529" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o ..\obj\usmart_str.o --omf_browse ..\obj\usmart_str.crf --depend ..\obj\usmart_str.d)
 I (..\USMART\usmart_str.h)(0x5501A38D)
 I (..\CMSIS\stm32f10x.h)(0x4D783CB4)

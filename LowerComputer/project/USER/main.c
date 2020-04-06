@@ -28,26 +28,14 @@ int main(void)
 	delay_init();			//延时初始化
 	uart_init(115200);		//串口1初始化115200
 	usmart_dev.init(72);	//初始化USMART
-	
-	while(t){
-		t = MPU_Init();
-		printf("%d\n",t);
-	}
 	usart3_init(115200);	//串口3初始化115200
 	esp8266_start_trans();	//ESP8266初始化
+	MPU_Init();
+	while(mpu_dmp_init());
 	while(1){
 		memset(sendBuffer, 0, sizeof(sendBuffer));
 		sprintf(sendBuffer, "0#%s", points[i]);
 		esp8266_send_data_tcp(sendBuffer,20);
-		delay_ms(1000);
-		delay_ms(1000);
-		delay_ms(1000);
-		delay_ms(1000);
-		delay_ms(1000);
-		delay_ms(1000);
-		i++;
-		if(i >= 5) i = 0;
-		printf("-----------------------\n");
 	}
 	
 	return 0;
