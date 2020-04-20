@@ -11,3 +11,6 @@ PD->3.3<br>
 ### ATGM336H
 RX->PA2<br>
 TX->PA3<br>
+### JR6001
+RX->PA9<br>
+TX->PA10<br>
