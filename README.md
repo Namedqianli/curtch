@@ -8,3 +8,6 @@ ADO->PA15<br>
 RXD->PB10<br>
 TXD->PB11<br>
 PD->3.3<br>
+### ATGM336H
+RX->PA2<br>
+TX->PA3<br>
