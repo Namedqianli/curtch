@@ -1,0 +1,7 @@
+Added Component: Designator=6(DIP16)
+Added Pin To Net: NetName=8V Pin=6-1
+Added Pin To Net: NetName=GND Pin=6-2
+Added Pin To Net: NetName=GND Pin=6-3
+Added Pin To Net: NetName=5V Pin=6-4
+Added Member To Class: ClassName=Curtch_Sheet Member=Component 6 5VŒ»—π
+Added Room: Name=Curtch_Sheet

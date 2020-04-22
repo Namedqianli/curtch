@@ -1,0 +1,15 @@
+Added Component: Designator=power(XH2.54-WI-2P)
+Add component (AddParameter): Name = "BOM名称"; Value = "2P接插件"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "版权归属"; Value = "源创客"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "学习资源"; Value = "www.ooocke.com"; VariantName = "[No Variations]"
+Added Component: Designator=SPEAKER(XH2.54-WI-2P)
+Add component (AddParameter): Name = "BOM名称"; Value = "2P接插件"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "版权归属"; Value = "源创客"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "学习资源"; Value = "www.ooocke.com"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND Pin=power-1
+Added Pin To Net: NetName=8V Pin=power-2
+Added Pin To Net: NetName=SPK+ Pin=SPEAKER-1
+Added Pin To Net: NetName=SPK- Pin=SPEAKER-2
+Added Member To Class: ClassName=Curtch_Sheet Member=Component power HDR-1X2
+Added Member To Class: ClassName=Curtch_Sheet Member=Component SPEAKER HDR-1X2
+Added Room: Name=Curtch_Sheet

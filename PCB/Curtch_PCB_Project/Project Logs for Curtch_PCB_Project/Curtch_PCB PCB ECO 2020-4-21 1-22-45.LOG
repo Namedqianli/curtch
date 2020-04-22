@@ -1,0 +1,45 @@
+Added Component: Designator=1(DIP40)
+Added Component: Designator=2(DIP8 - duplicate)
+Added Component: Designator=3(DIP20)
+Added Component: Designator=4(DIP10)
+Added Component: Designator=5(MPU6050)
+Added Pin To Net: NetName=PA11 Pin=1-8
+Added Pin To Net: NetName=PA12 Pin=1-9
+Added Pin To Net: NetName=PA15 Pin=1-10
+Added Pin To Net: NetName=5V Pin=1-18
+Added Pin To Net: NetName=GND Pin=1-19
+Added Pin To Net: NetName=PA2 Pin=1-27
+Added Pin To Net: NetName=PA3 Pin=1-28
+Added Pin To Net: NetName=PB11 Pin=1-35
+Added Pin To Net: NetName=PB10 Pin=1-36
+Added Pin To Net: NetName=3.3V Pin=1-38
+Added Pin To Net: NetName=PB10 Pin=2-1
+Added Pin To Net: NetName=3.3V Pin=2-2
+Added Pin To Net: NetName=3.3V Pin=2-4
+Added Pin To Net: NetName=PB11 Pin=2-5
+Added Pin To Net: NetName=GND Pin=2-8
+Added Pin To Net: NetName=GND Pin=3-1
+Added Pin To Net: NetName=5V Pin=3-2
+Added Pin To Net: NetName=SPK+ Pin=3-6
+Added Pin To Net: NetName=SPK- Pin=3-7
+Added Pin To Net: NetName=PA2 Pin=4-2
+Added Pin To Net: NetName=PA3 Pin=4-3
+Added Pin To Net: NetName=GND Pin=4-4
+Added Pin To Net: NetName=5V Pin=4-5
+Added Pin To Net: NetName=PA15 Pin=5-1
+Added Pin To Net: NetName=PA11 Pin=5-3
+Added Pin To Net: NetName=PA12 Pin=5-4
+Added Pin To Net: NetName=GND Pin=5-5
+Added Pin To Net: NetName=3.3V Pin=5-6
+Added Pin To Net: NetName=PA9 Pin=1-6
+Added Pin To Net: NetName=PA9 Pin=3-3
+Added Net: Name=PA9
+Added Pin To Net: NetName=PA10 Pin=1-7
+Added Pin To Net: NetName=PA10 Pin=3-4
+Added Net: Name=PA10
+Added Member To Class: ClassName=Curtch_Sheet Member=Component 1 STM32最小系统板
+Added Member To Class: ClassName=Curtch_Sheet Member=Component 2 ESP8266
+Added Member To Class: ClassName=Curtch_Sheet Member=Component 3 JR6001
+Added Member To Class: ClassName=Curtch_Sheet Member=Component 4 ATGM336H
+Added Member To Class: ClassName=Curtch_Sheet Member=Component 5 MPU6050
+Added Room: Name=Curtch_Sheet

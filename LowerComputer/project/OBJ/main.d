@@ -40,3 +40,5 @@
 ..\obj\main.o: ..\USMART\usmart_str.h
 ..\obj\main.o: ..\HARDWARE\MPU6050\eMPL\inv_mpu.h
 ..\obj\main.o: ..\HARDWARE\MPU6050\eMPL\inv_mpu_dmp_motion_driver.h
+..\obj\main.o: ..\HARDWARE\ATGM336H\atgm336h.h
+..\obj\main.o: ..\SYSTEM\USART2\usart2.h

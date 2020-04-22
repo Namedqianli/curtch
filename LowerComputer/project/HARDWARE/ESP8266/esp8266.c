@@ -77,13 +77,13 @@ u8 esp8266_send_cmd(u8 *cmd,u8 *ack,u16 waittime)
 					printf("ack:%s\r\n",(u8*)ack);
 					break;//得到有效数据 
 				}
-					USART3_RX_STA=0;
+				USART3_RX_STA=0;
 			} 
 		}
 		if(waittime==0)res=1; 
 	}
 	return res;
-} 
+}
 
 
 //ESP8266发送命令后,检测接收到的应答

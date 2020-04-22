@@ -338,7 +338,7 @@
               <MiscControls></MiscControls>
               <Define>USE_STDPERIPH_DRIVER, STM32F10X_HD</Define>
               <Undefine></Undefine>
-              <IncludePath>..\FWLib\inc;..\CMSIS;..\USER;..\SYSTEM;..\SYSTEM\USART;..\HARDWARE\ESP8266;..\SYSTEM\DELAY;..\SYSTEM\SYS;..\SYSTEM\TIMER;..\SYSTEM\USART3;..\HARDWARE\MPU6050;..\HARDWARE\MPU6050\eMPL;..\USMART</IncludePath>
+              <IncludePath>..\FWLib\inc;..\CMSIS;..\USER;..\SYSTEM;..\SYSTEM\USART;..\HARDWARE\ESP8266;..\SYSTEM\DELAY;..\SYSTEM\SYS;..\SYSTEM\TIMER;..\SYSTEM\USART3;..\HARDWARE\MPU6050;..\HARDWARE\MPU6050\eMPL;..\USMART;..\SYSTEM\USART3;..\HARDWARE\ATGM336H;..\SYSTEM\USART2;..\SYSTEM\USART4</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -567,6 +567,11 @@
               <FileType>1</FileType>
               <FilePath>..\HARDWARE\MPU6050\mpuiic.c</FilePath>
             </File>
+            <File>
+              <FileName>atgm336h.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\ATGM336H\atgm336h.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -596,6 +601,16 @@
               <FileName>timer.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\SYSTEM\TIMER\timer.c</FilePath>
+            </File>
+            <File>
+              <FileName>usart2.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\SYSTEM\USART2\usart2.c</FilePath>
+            </File>
+            <File>
+              <FileName>usart4.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\SYSTEM\USART4\usart4.c</FilePath>
             </File>
           </Files>
         </Group>
