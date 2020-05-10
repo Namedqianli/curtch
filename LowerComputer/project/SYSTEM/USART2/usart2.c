@@ -38,18 +38,17 @@ void uart2_init(u32 bound){
    
     //USART1_RX	  GPIOA.3初始化
     GPIO_InitStructure.GPIO_Pin = GPIO_Pin_3;//PA3
-    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;//浮空输入
-    GPIO_Init(GPIOA, &GPIO_InitStructure);//初始化GPIOA.3
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;	//浮空输入
+    GPIO_Init(GPIOA, &GPIO_InitStructure);					//初始化GPIOA.3
 
     //Usart2 NVIC 配置
     NVIC_InitStructure.NVIC_IRQChannel = USART2_IRQn;
 	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority=1;//抢占优先级3
-	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 3;		//子优先级3
+	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 1;		//子优先级3
 	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;			//IRQ通道使能
 	NVIC_Init(&NVIC_InitStructure);	//根据指定的参数初始化VIC寄存器
   
     //USART 初始化设置
-
 	USART_InitStructure.USART_BaudRate = bound;//串口波特率
 	USART_InitStructure.USART_WordLength = USART_WordLength_8b;//字长为8位数据格式
 	USART_InitStructure.USART_StopBits = USART_StopBits_1;//一个停止位
@@ -87,7 +86,7 @@ void USART2_IRQHandler(void)                	//串口1中断服务程序
 			{
 				memset(Save_Data.GPS_Buffer, 0, GPS_Buffer_Length);      //清空
 				memcpy(Save_Data.GPS_Buffer, USART_RX_BUF, point1); 	//保存数据
-				Save_Data.isGetData = true;
+				Save_Data.isGetData = 1;
 				point1 = 0;
 				memset(USART_RX_BUF, 0, USART_REC_LEN);      //清空				
 			}	
@@ -147,10 +146,10 @@ u8 Hand(char *a)                   // 串口命令识别函数
 		return 0;
 }
 
-void CLR_Buf(void)                           // 串口缓存清理
+void CLR_Buf(void)	// 串口缓存清理
 {
 	memset(USART_RX_BUF, 0, USART_REC_LEN);      //清空
-  point1 = 0;                    
+	point1 = 0;                    
 }
 #endif
 

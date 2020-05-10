@@ -34,20 +34,24 @@ import com.baidu.mapapi.map.Overlay;
 import com.baidu.mapapi.map.OverlayOptions;
 import com.baidu.mapapi.map.PolylineOptions;
 import com.baidu.mapapi.model.LatLng;
+import com.baidu.mapapi.utils.CoordinateConverter;
 import com.baidu.trace.LBSTraceClient;
 import com.baidu.trace.Trace;
 import com.baidu.trace.model.OnTraceListener;
 import com.baidu.trace.model.PushMessage;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
 import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TrackMap extends Fragment {
+public class TrackMap extends Fragment implements View.OnClickListener {
 
     private MapView mapView;
     private BaiduMap baiduMap;
@@ -61,6 +65,7 @@ public class TrackMap extends Fragment {
     private Thread thread;
     private Handler handler;
     private BufferedReader bufferedReader;
+    private BufferedWriter bufferedWriter;
     private LatLng point1;
     private LatLng point2;
     private boolean threadFlag;
@@ -117,19 +122,36 @@ public class TrackMap extends Fragment {
                 super.handleMessage(msg);
                 //取出消息
                 String buffer = msg.obj.toString();
-                Log.d("debug001", buffer);
                 String result[] = buffer.split("#");
+                if(result.length != 3){
+                    return;
+                }
                 switch (result[0]){
                     case "0":
+                        Log.d("debug001", buffer);
+                        double lat = Double.valueOf(result[1])/100.0;
+                        double lon = Double.valueOf(result[2])/100.0;
+                        int la = (int)lat;
+                        int lo = (int)lon;
+                        Log.d("debug004", "" + la + "--" + lo);
+                        lat = la + ((lat-la)*100)/60.0;
+                        lon = lo + ((lon-lo)*100)/60.0;
+                        LatLng gpsPoint = new LatLng(lat, lon);
+                        double[] gcj = GpsToBaidu.GPS_transformation(gpsPoint.latitude, gpsPoint.longitude);
+                        LatLng bd = new LatLng(gcj[1], gcj[0]);
+                        Log.d("debuggtb", "" + bd.latitude + "\n" + bd.longitude);
+                        Log.d("debug002", "\n" + buffer + "\n"+bd.latitude + "  " + bd.longitude);
+                        Log.d("debug003", "" + gpsPoint.latitude + "\n" + gpsPoint.longitude);
                         if(isFirstLocation){
-                            point2 = new LatLng(Double.valueOf(result[2]), Double.valueOf(result[1]));
+                            point2 = bd;
                             MapStatus.Builder builder = new MapStatus.Builder()
                                     .target(point2) //地图缩放中心点
                                     .zoom(17f);
+                            baiduMap.setMapStatus(MapStatusUpdateFactory.newMapStatus(builder.build()));
                             isFirstLocation = false;
                         }else {
                             point1 = point2;
-                            point2 = new LatLng(Double.valueOf(result[2]), Double.valueOf(result[1]));
+                            point2 = bd;
                             List<LatLng> points = new ArrayList<LatLng>();
                             points.add(point1);
                             points.add(point2);
@@ -279,6 +301,16 @@ public class TrackMap extends Fragment {
         });
         thread.start();
     }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.qmuiRoundButtouTrackClear:
+                baiduMap.clear();
+                break;
+        }
+    }
+
     /**
      * 定位事件监听
      */
@@ -300,14 +332,14 @@ public class TrackMap extends Fragment {
             baiduMap.setMyLocationData(locData);
             LatLng latLng = new LatLng(bdLocation.getLatitude(), bdLocation.getLongitude());
             //第一次定位需要更新下地图显示状态
-            if (isFirstLoc) {
-                isFirstLoc = false;
-                MapStatus.Builder builder = new MapStatus.Builder()
-                        .target(latLng) //地图缩放中心点
-                        .zoom(17f);     //缩放倍数 百度地图支持缩放21级 部分特殊图层为20级
-                //改变地图状态
-                baiduMap.setMapStatus(MapStatusUpdateFactory.newMapStatus(builder.build()));
-            }
+//            if (isFirstLoc) {
+//                isFirstLoc = false;
+//                MapStatus.Builder builder = new MapStatus.Builder()
+//                        .target(latLng) //地图缩放中心点
+//                        .zoom(17f);     //缩放倍数 百度地图支持缩放21级 部分特殊图层为20级
+//                //改变地图状态
+//                baiduMap.setMapStatus(MapStatusUpdateFactory.newMapStatus(builder.build()));
+//            }
             baiduMap.setMyLocationData(locData);
             locationClient.stop();
             baiduMap.clear();
@@ -386,6 +418,12 @@ public class TrackMap extends Fragment {
         }catch (IOException e){
             e.printStackTrace();
         }
+        //输出流
+        OutputStream ops;
+        OutputStreamWriter opsw;
+        ops = socket.getOutputStream();
+        opsw = new OutputStreamWriter(ops);
+        bufferedWriter = new BufferedWriter(opsw);
         //初始化地图定位
         //检查申请权限
         judgePermission();

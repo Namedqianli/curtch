@@ -1,0 +1,4 @@
+Change Component Footprint: Designator=power Old Footprint=XH2.54-WI-2P New Footprint=HDR2.54-Y-LI-2P
+Change Component Footprint: Designator=SPEAKER Old Footprint=XH2.54-WI-2P New Footprint=HDR2.54-Y-LI-2P
+Change Component Footprint: Designator=USART1 Old Footprint=XH2.54-WI-4P New Footprint=HDR2.54-Y-LI-4P
+Added Room: Name=Curtch_Sheet

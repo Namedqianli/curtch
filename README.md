@@ -5,8 +5,8 @@ SCL->PA11<br>
 SDA->PA12<br>
 ADO->PA15<br>
 ### ESP8266
-RXD->PB10<br>
-TXD->PB11<br>
+RXD->PB11<br>
+TXD->PB10<br>
 PD->3.3<br>
 ### ATGM336H
 RX->PA2<br>

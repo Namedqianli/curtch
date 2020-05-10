@@ -1,0 +1,3 @@
+Change Component Designator: OldDesignator=Q1 9014 NewDesignator=Q1
+Added Pin To Net: NetName=Net1K_2 Pin=Q1-2
+Added Room: Name=Curtch_Sheet

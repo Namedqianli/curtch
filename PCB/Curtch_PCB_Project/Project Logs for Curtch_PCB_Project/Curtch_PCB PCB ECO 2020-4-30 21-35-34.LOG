@@ -1,0 +1,69 @@
+Added Component: Designator=kr1(AXIAL0.4)
+Added Component: Designator=kr2(AXIAL0.4)
+Added Component: Designator=kr3(AXIAL0.4)
+Added Component: Designator=kr4(AXIAL0.4)
+Added Component: Designator=kr5(AXIAL0.4)
+Added Component: Designator=kr?(AXIAL0.4)
+Added Component: Designator=kr?(AXIAL0.4)
+Added Component: Designator=kr?(AXIAL0.4)
+Added Component: Designator=kr?(AXIAL0.4)
+Added Component: Designator=kr?(AXIAL0.4)
+Added Component: Designator=LED1(LED-0)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageReference"; Value = "3.2X1.6X1.1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageVersion"; Value = "Feb-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "8-Jun-2000"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=LED?(LED 5MM-B)
+Add component (AddParameter): Name = "BOM名称"; Value = "5mm插件LED"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "版权归属"; Value = "源创客"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "学习资源"; Value = "www.ooocke.com"; VariantName = "[No Variations]"
+Added Component: Designator=S1(SW6*6)
+Added Component: Designator=S2(SW6*6)
+Added Component: Designator=S3(SW6*6)
+Added Component: Designator=S4(SW6*6)
+Added Component: Designator=S5(SW6*6)
+Added Pin To Net: NetName=GND Pin=kr1-2
+Added Pin To Net: NetName=GND Pin=kr2-2
+Added Pin To Net: NetName=GND Pin=kr3-2
+Added Pin To Net: NetName=GND Pin=kr4-2
+Added Pin To Net: NetName=GND Pin=kr5-2
+Added Pin To Net: NetName=Netkr1_1 Pin=kr1-1
+Added Pin To Net: NetName=Netkr1_1 Pin=S1-2
+Added Pin To Net: NetName=Netkr1_1 Pin=S1-2
+Added Net: Name=Netkr1_1
+Added Pin To Net: NetName=Netkr2_1 Pin=kr2-1
+Added Pin To Net: NetName=Netkr2_1 Pin=S2-2
+Added Pin To Net: NetName=Netkr2_1 Pin=S2-2
+Added Net: Name=Netkr2_1
+Added Pin To Net: NetName=Netkr3_1 Pin=kr3-1
+Added Pin To Net: NetName=Netkr3_1 Pin=S3-2
+Added Pin To Net: NetName=Netkr3_1 Pin=S3-2
+Added Net: Name=Netkr3_1
+Added Pin To Net: NetName=Netkr4_1 Pin=kr4-1
+Added Pin To Net: NetName=Netkr4_1 Pin=S4-2
+Added Pin To Net: NetName=Netkr4_1 Pin=S4-2
+Added Net: Name=Netkr4_1
+Added Pin To Net: NetName=Netkr5_1 Pin=kr5-1
+Added Pin To Net: NetName=Netkr5_1 Pin=S5-2
+Added Pin To Net: NetName=Netkr5_1 Pin=S5-2
+Added Net: Name=Netkr5_1
+Added Member To Class: ClassName=Curtch_Sheet Member=Component kr1 RES
+Added Member To Class: ClassName=Curtch_Sheet Member=Component kr2 RES
+Added Member To Class: ClassName=Curtch_Sheet Member=Component kr3 RES
+Added Member To Class: ClassName=Curtch_Sheet Member=Component kr4 RES
+Added Member To Class: ClassName=Curtch_Sheet Member=Component kr5 RES
+Added Member To Class: ClassName=Curtch_Sheet Member=Component kr? RES
+Added Member To Class: ClassName=Curtch_Sheet Member=Component kr? RES
+Added Member To Class: ClassName=Curtch_Sheet Member=Component kr? RES
+Added Member To Class: ClassName=Curtch_Sheet Member=Component kr? RES
+Added Member To Class: ClassName=Curtch_Sheet Member=Component kr? RES
+Added Member To Class: ClassName=Curtch_Sheet Member=Component LED1 LED2
+Added Member To Class: ClassName=Curtch_Sheet Member=Component LED? 红色
+Added Member To Class: ClassName=Curtch_Sheet Member=Component S1 SW-PB
+Added Member To Class: ClassName=Curtch_Sheet Member=Component S2 SW-PB
+Added Member To Class: ClassName=Curtch_Sheet Member=Component S3 SW-PB
+Added Member To Class: ClassName=Curtch_Sheet Member=Component S4 SW-PB
+Added Member To Class: ClassName=Curtch_Sheet Member=Component S5 SW-PB
+Added Room: Name=Curtch_Sheet

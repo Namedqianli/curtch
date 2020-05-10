@@ -42,3 +42,7 @@
 ..\obj\main.o: ..\HARDWARE\MPU6050\eMPL\inv_mpu_dmp_motion_driver.h
 ..\obj\main.o: ..\HARDWARE\ATGM336H\atgm336h.h
 ..\obj\main.o: ..\SYSTEM\USART2\usart2.h
+..\obj\main.o: ..\HARDWARE\HCSR04\hcsr04.h
+..\obj\main.o: ..\HARDWARE\LED\led.h
+..\obj\main.o: ..\HARDWARE\KEY\key.h
+..\obj\main.o: ..\HARDWARE\BEEP\beep.h

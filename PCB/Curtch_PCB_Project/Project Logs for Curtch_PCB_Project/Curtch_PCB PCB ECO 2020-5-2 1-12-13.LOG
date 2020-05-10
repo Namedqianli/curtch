@@ -1,0 +1,5 @@
+Removed Pin From Net: NetName=PA3 Pin=3-3
+Removed Pin From Net: NetName=PA2 Pin=4-2
+Added Pin To Net: NetName=PA2 Pin=3-3
+Added Pin To Net: NetName=PA3 Pin=4-2
+Added Room: Name=Curtch_Sheet

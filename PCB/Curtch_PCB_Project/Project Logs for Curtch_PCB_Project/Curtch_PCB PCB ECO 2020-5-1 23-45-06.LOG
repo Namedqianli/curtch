@@ -1,0 +1,9 @@
+Removed Pin From Net: NetName=GND Pin=kr3-2
+Removed Pin From Net: NetName=GND Pin=lr3-2
+Removed Member From Class: ClassName=Curtch_Sheet Member=kr3
+Removed Member From Class: ClassName=Curtch_Sheet Member=LED3
+Removed Member From Class: ClassName=Curtch_Sheet Member=lr3
+Removed Member From Class: ClassName=Curtch_Sheet Member=S3
+Change Component Designator: OldDesignator=HCSR04 NewDesignator=JP1
+Added Member To Class: ClassName=Curtch_Sheet Member=Component 1 STM32最小系统板
+Added Room: Name=Curtch_Sheet

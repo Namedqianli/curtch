@@ -1,0 +1,97 @@
+Removed Pin From Net: NetName=PA9 Pin=3-3
+Removed Pin From Net: NetName=PA10 Pin=3-4
+Removed Pin From Net: NetName=PA3 Pin=4-3
+Added Component: Designator=JP1(HDR2.54-LI-4P)
+Add component (AddParameter): Name = "BOM名称"; Value = "4P接插件"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "版权归属"; Value = "源创客"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "学习资源"; Value = "www.ooocke.com"; VariantName = "[No Variations]"
+Added Component: Designator=kr1(AXIAL0.4)
+Added Component: Designator=kr2(AXIAL0.4)
+Added Component: Designator=kr3(AXIAL0.4)
+Added Component: Designator=LED1(LED 5MM-B)
+Add component (AddParameter): Name = "BOM名称"; Value = "5mm插件LED"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "版权归属"; Value = "源创客"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "学习资源"; Value = "www.ooocke.com"; VariantName = "[No Variations]"
+Added Component: Designator=LED2(LED 5MM-B)
+Add component (AddParameter): Name = "BOM名称"; Value = "5mm插件LED"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "版权归属"; Value = "源创客"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "学习资源"; Value = "www.ooocke.com"; VariantName = "[No Variations]"
+Added Component: Designator=LED3(LED 5MM-B)
+Add component (AddParameter): Name = "BOM名称"; Value = "5mm插件LED"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "版权归属"; Value = "源创客"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "学习资源"; Value = "www.ooocke.com"; VariantName = "[No Variations]"
+Added Component: Designator=lr1(AXIAL0.4)
+Added Component: Designator=lr2(AXIAL0.4)
+Added Component: Designator=lr3(AXIAL0.4)
+Added Component: Designator=S1(SW6*6)
+Added Component: Designator=S2(SW6*6)
+Added Component: Designator=S3(SW6*6)
+Added Pin To Net: NetName=3.3V Pin=1-20
+Added Pin To Net: NetName=PA3 Pin=3-3
+Added Pin To Net: NetName=5V Pin=JP1-1
+Added Pin To Net: NetName=GND Pin=JP1-4
+Added Pin To Net: NetName=Netkr1_1 Pin=kr1-1
+Added Pin To Net: NetName=GND Pin=kr1-2
+Added Pin To Net: NetName=Netkr2_1 Pin=kr2-1
+Added Pin To Net: NetName=GND Pin=kr2-2
+Added Pin To Net: NetName=Netkr3_1 Pin=kr3-1
+Added Pin To Net: NetName=GND Pin=kr3-2
+Added Pin To Net: NetName=GND Pin=lr1-2
+Added Pin To Net: NetName=GND Pin=lr2-2
+Added Pin To Net: NetName=GND Pin=lr3-2
+Added Pin To Net: NetName=Netkr1_1 Pin=S1-2
+Added Pin To Net: NetName=Netkr1_1 Pin=S1-2
+Added Pin To Net: NetName=Netkr2_1 Pin=S2-2
+Added Pin To Net: NetName=Netkr2_1 Pin=S2-2
+Added Pin To Net: NetName=Netkr3_1 Pin=S3-2
+Added Pin To Net: NetName=Netkr3_1 Pin=S3-2
+Added Pin To Net: NetName=B12 Pin=1-1
+Added Pin To Net: NetName=B12 Pin=LED1-2
+Added Net: Name=B12
+Added Pin To Net: NetName=B13 Pin=1-2
+Added Pin To Net: NetName=B13 Pin=LED2-2
+Added Net: Name=B13
+Added Pin To Net: NetName=B14 Pin=1-3
+Added Pin To Net: NetName=B14 Pin=LED3-2
+Added Net: Name=B14
+Added Pin To Net: NetName=NetLED1_1 Pin=LED1-1
+Added Pin To Net: NetName=NetLED1_1 Pin=lr1-1
+Added Net: Name=NetLED1_1
+Added Pin To Net: NetName=NetLED2_1 Pin=LED2-1
+Added Pin To Net: NetName=NetLED2_1 Pin=lr2-1
+Added Net: Name=NetLED2_1
+Added Pin To Net: NetName=NetLED3_1 Pin=LED3-1
+Added Pin To Net: NetName=NetLED3_1 Pin=lr3-1
+Added Net: Name=NetLED3_1
+Added Pin To Net: NetName=PA0 Pin=1-25
+Added Pin To Net: NetName=PA0 Pin=JP1-3
+Added Net: Name=PA0
+Added Pin To Net: NetName=PA4 Pin=1-29
+Added Pin To Net: NetName=PA4 Pin=JP1-2
+Added Net: Name=PA4
+Added Pin To Net: NetName=PA7 Pin=1-32
+Added Pin To Net: NetName=PA7 Pin=S3-1
+Added Pin To Net: NetName=PA7 Pin=S3-1
+Added Net: Name=PA7
+Added Pin To Net: NetName=PB0 Pin=1-33
+Added Pin To Net: NetName=PB0 Pin=S2-1
+Added Pin To Net: NetName=PB0 Pin=S2-1
+Added Net: Name=PB0
+Added Pin To Net: NetName=PB1 Pin=1-34
+Added Pin To Net: NetName=PB1 Pin=S1-1
+Added Pin To Net: NetName=PB1 Pin=S1-1
+Added Net: Name=PB1
+Added Member To Class: ClassName=Curtch_Sheet Member=Component JP1 HDR-1X4
+Added Member To Class: ClassName=Curtch_Sheet Member=Component kr1 RES
+Added Member To Class: ClassName=Curtch_Sheet Member=Component kr2 RES
+Added Member To Class: ClassName=Curtch_Sheet Member=Component kr3 RES
+Added Member To Class: ClassName=Curtch_Sheet Member=Component LED1 红色
+Added Member To Class: ClassName=Curtch_Sheet Member=Component LED2 红色
+Added Member To Class: ClassName=Curtch_Sheet Member=Component LED3 红色
+Added Member To Class: ClassName=Curtch_Sheet Member=Component lr1 RES
+Added Member To Class: ClassName=Curtch_Sheet Member=Component lr2 RES
+Added Member To Class: ClassName=Curtch_Sheet Member=Component lr3 RES
+Added Member To Class: ClassName=Curtch_Sheet Member=Component S1 SW-PB
+Added Member To Class: ClassName=Curtch_Sheet Member=Component S2 SW-PB
+Added Member To Class: ClassName=Curtch_Sheet Member=Component S3 SW-PB
+Added Room: Name=Curtch_Sheet

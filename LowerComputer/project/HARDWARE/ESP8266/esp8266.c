@@ -13,7 +13,7 @@ void esp8266_start_trans(void)
 	esp8266_send_cmd("AT+CWMODE=2","OK",50);
 	
 	//让Wifi模块重启的命令
-	esp8266_send_cmd("AT+RST","ready",20);
+	esp8266_send_cmd("AT+RST","ready",60);
 	
 	delay_ms(1000);         //延时3S等待重启成功
 	delay_ms(1000);
@@ -27,18 +27,9 @@ void esp8266_start_trans(void)
 	esp8266_send_cmd("AT+CIPMUX=1","OK",20);
 	
 	//设置wifi名
-	esp8266_send_cmd("AT+CWSAP=\"hhzqd\",\"hhz2020\",11,0","OK",20);
+	esp8266_send_cmd("AT+CWSAP=\"hhzbs2020testcnm\",\"hhz2020\",11,0","OK",30);
 	
 	esp8266_send_cmd("AT+CIPSERVER=1,8686","OK",20);
-	
-	//建立TCP连接  这四项分别代表了 要连接的ID号0~4   连接类型  远程服务器IP地址   远程服务器端口号
-	//while(esp8266_send_cmd("AT+CIPSTART=\"TCP\",\"xxx.xxx.xxx.xxx\",xxxx","CONNECT",200));
-	
-	//是否开启透传模式  0：表示关闭 1：表示开启透传
-	//esp8266_send_cmd("AT+CIPMODE=1","OK",200);
-	
-	//透传模式下 开始发送数据的指令 这个指令之后就可以直接发数据了
-	//esp8266_send_cmd("AT+CIPSEND","OK",50);
 }
 
 //ESP8266退出透传模式   返回值:0,退出成功;1,退出失败

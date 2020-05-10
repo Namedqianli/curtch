@@ -1,0 +1,22 @@
+Added Component: Designator=1K(AXIAL0.4)
+Added Component: Designator=10k(AXIAL0.4)
+Added Component: Designator=BE1(BEEP 5x9x5.5)
+Added Component: Designator=Q1(TO92A)
+Add component (AddParameter): Name = "BOM名称"; Value = "低噪放大-NPN型"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "版权归属"; Value = "源创客"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "属性"; Value = "50V 0.1A 0.4W 150MHZ"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "学习资源"; Value = "www.ooocke.com"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=PB5 Pin=1K-1
+Added Pin To Net: NetName=GND Pin=10k-2
+Added Pin To Net: NetName=5V Pin=BE1-1
+Added Pin To Net: NetName=NetBE1_2 Pin=BE1-2
+Added Pin To Net: NetName=GND Pin=Q1-1
+Added Pin To Net: NetName=NetBE1_2 Pin=Q1-3
+Added Pin To Net: NetName=Net1K_2 Pin=1K-2
+Added Pin To Net: NetName=Net1K_2 Pin=10k-1
+Added Net: Name=Net1K_2
+Added Member To Class: ClassName=Curtch_Sheet Member=Component 1K RES
+Added Member To Class: ClassName=Curtch_Sheet Member=Component 10k RES
+Added Member To Class: ClassName=Curtch_Sheet Member=Component BE1 BEEP
+Added Member To Class: ClassName=Curtch_Sheet Member=Component Q1 S9014
+Added Room: Name=Curtch_Sheet
