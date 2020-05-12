@@ -15,7 +15,7 @@ u8  USART3_TX_BUF[USART3_MAX_SEND_LEN]; 			//·¢ËÍ»º³å,×î´óUSART3_MAX_SEND_LEN×Ö½
 //½ÓÊÕµ½µÄÊý¾Ý×´Ì¬
 //[15]:0,Ã»ÓÐ½ÓÊÕµ½Êý¾Ý;1,½ÓÊÕµ½ÁËÒ»ÅúÊý¾Ý.
 //[14:0]:½ÓÊÕµ½µÄÊý¾Ý³¤¶È
-vu16 USART3_RX_STA=0;   	
+vu16 USART3_RX_STA=0;
 
 
 void USART3_IRQHandler(void)
@@ -110,24 +110,3 @@ void u3_printf(char* fmt,...)
 			USART_SendData(USART3,USART3_TX_BUF[j]);
 	} 
 }
-
- 
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-

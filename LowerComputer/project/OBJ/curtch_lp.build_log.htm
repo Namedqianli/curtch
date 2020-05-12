@@ -48,31 +48,35 @@ compiling main.c...
   #endif
 ..\HARDWARE\BEEP\beep.h(10): warning:  #1-D: last line of file ends without a newline
   #endif
-main.c(99): warning:  #223-D: function "memset" declared implicitly
+main.c(129): warning:  #223-D: function "memset" declared implicitly
   				memset(sendBuffer, 0, sizeof(sendBuffer));
-main.c(107): warning:  #223-D: function "memset" declared implicitly
+main.c(132): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "u8 *"
+  				esp8266_send_data_tcp(sendBuffer,20);
+main.c(137): warning:  #223-D: function "memset" declared implicitly
   			memset(sendBuffer, 0, sizeof(sendBuffer));
-main.c(147): warning:  #223-D: function "memset" declared implicitly
+main.c(184): warning:  #223-D: function "memset" declared implicitly
   			memset(sendBuffer, 0, sizeof(sendBuffer));
-main.c(150): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "u8 *"
-  			esp8266_send_data_tcp(sendBuffer, 20);
-main.c(154): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "u8 *"
-  			esp8266_send_data_tcp(sendBuffer, 20);
-main.c(159): warning:  #111-D: statement is unreachable
+main.c(212): warning:  #111-D: statement is unreachable
   	return 0;
-main.c(29): warning:  #177-D: variable "points"  was declared but never referenced
+main.c(35): warning:  #177-D: variable "points"  was declared but never referenced
   	char points[10][21] = {			//模拟坐标
-main.c(43): warning:  #177-D: variable "temp"  was declared but never referenced
+main.c(42): warning:  #177-D: variable "tripFlag"  was declared but never referenced
+  	u8 tripFlag = 0;				//摔倒标志
+main.c(43): warning:  #177-D: variable "tooCloseFlag"  was declared but never referenced
+  	u8 tooCloseFlag = 0;			//接近标志
+main.c(44): warning:  #550-D: variable "keyFlag"  was set but never used
+  	u8 keyFlag = 0;					//按键标志
+main.c(54): warning:  #177-D: variable "temp"  was declared but never referenced
   	short temp;						//温度	
-main.c(45): warning:  #177-D: variable "i"  was declared but never referenced
+main.c(56): warning:  #177-D: variable "i"  was declared but never referenced
   	u8 i = 0, t = 1;
-main.c(45): warning:  #177-D: variable "t"  was declared but never referenced
+main.c(56): warning:  #177-D: variable "t"  was declared but never referenced
   	u8 i = 0, t = 1;
-main.c: 20 warnings, 0 errors
+main.c: 22 warnings, 0 errors
 linking...
-Program Size: Code=38048 RO-data=4636 RW-data=444 ZI-data=3900  
+Program Size: Code=38164 RO-data=4640 RW-data=444 ZI-data=3636  
 FromELF: creating hex file...
-"..\OBJ\curtch_lp.axf" - 0 Error(s), 20 Warning(s).
+"..\OBJ\curtch_lp.axf" - 0 Error(s), 22 Warning(s).
 
 <h2>Software Packages used:</h2>
 

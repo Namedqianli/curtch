@@ -2895,6 +2895,7 @@ u8 run_self_test(void)
 		gyro[2] = (long)(gyro[2] * sens);
 		dmp_set_gyro_bias(gyro);
 		mpu_get_accel_sens(&accel_sens);
+		accel_sens = 0;			//µØÐÄ_ÐÞ¸Ä
 		accel[0] *= accel_sens;
 		accel[1] *= accel_sens;
 		accel[2] *= accel_sens;

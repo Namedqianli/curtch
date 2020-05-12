@@ -20,7 +20,7 @@ void HCSR04_Init(u16 arr,u16 psc)
     GPIO_InitStructure.GPIO_Pin=GPIO_Pin_4;
     GPIO_InitStructure.GPIO_Mode=GPIO_Mode_Out_PP;
     GPIO_InitStructure.GPIO_Speed=GPIO_Speed_50MHz;
-    GPIO_Init(GPIOA,&GPIO_InitStructure);//PA4 推挽输出
+    GPIO_Init(GPIOA,&GPIO_InitStructure);//PA4 推挽输出+
 
     //初始化定时器 2 TIM2
     TIM_TimeBaseStructure.TIM_Period = arr; //设定计数器自动重装值

@@ -26,7 +26,7 @@
 //4,修改了EN_USART1_RX的使能方式
 //V1.5修改说明
 //1,增加了对UCOSII的支持
-#define USART2_REC_LEN  		600	  	//定义最大接收字节数 200
+#define USART2_REC_LEN  		512	  	//定义最大接收字节数 200
 #define USART2_MAX_SEND_LEN		128		//最大发送缓存字节数
 #define EN_USART2_RX 			1		//使能（1）/禁止（0）串口1接收
 	  	

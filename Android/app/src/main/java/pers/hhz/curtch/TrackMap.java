@@ -123,12 +123,12 @@ public class TrackMap extends Fragment implements View.OnClickListener {
                 //取出消息
                 String buffer = msg.obj.toString();
                 String result[] = buffer.split("#");
-                if(result.length != 3){
-                    return;
-                }
+                Log.d("debug001", buffer);
                 switch (result[0]){
                     case "0":
-                        Log.d("debug001", buffer);
+                        if(result.length != 3) {
+                            return;
+                        }
                         double lat = Double.valueOf(result[1])/100.0;
                         double lon = Double.valueOf(result[2])/100.0;
                         int la = (int)lat;
@@ -171,11 +171,13 @@ public class TrackMap extends Fragment implements View.OnClickListener {
                         break;
                     case "1":
                         if(threadFlag == false){
+                            Log.d("debug001", "1");
                             threadFlag = true;
                             threadCall = new Thread(new Runnable() {
                                 @Override
                                 public void run() {
                                     String number = ((MyApplication)getActivity().getApplication()).getSosNumber1();
+                                    Log.d("debug001", number);
                                     if(number != null){
                                         callPhone(number);
                                         try {

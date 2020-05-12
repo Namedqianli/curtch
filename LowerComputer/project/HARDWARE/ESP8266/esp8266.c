@@ -27,7 +27,7 @@ void esp8266_start_trans(void)
 	esp8266_send_cmd("AT+CIPMUX=1","OK",20);
 	
 	//…Ë÷√wifi√˚
-	esp8266_send_cmd("AT+CWSAP=\"hhzbs2020testcnm\",\"hhz2020\",11,0","OK",30);
+	esp8266_send_cmd("AT+CWSAP=\"hhz310\",\"hhz2020\",11,0","OK",30);
 	
 	esp8266_send_cmd("AT+CIPSERVER=1,8686","OK",20);
 }
