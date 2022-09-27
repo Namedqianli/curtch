@@ -1,5 +1,5 @@
 # curtch
-## 接线说明
+## How to connected
 ### MPU6050
 SCL->PA11<br>
 SDA->PA12<br>
